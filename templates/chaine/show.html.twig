@@ -1,0 +1,14 @@
+{# templates/chaine/show.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de la Chaîne{% endblock %}
+
+{% block body %}
+    <h1>{{ chaine.libelle }}</h1>
+    <p>Diffuseur: {{ chaine.diffuseur }}</p>
+    {# Add more details as needed #}
+
+    {# Add the edit button with a link to the edit page #}
+    <a href="{{ path('chaine_edit', {'id': chaine.id}) }}" class="btn btn-primary">Éditer</a>
+{% endblock %}

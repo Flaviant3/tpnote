@@ -1,0 +1,61 @@
+{# templates/video/list.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Vidéos{% endblock %}
+
+{% block body %}
+
+    <style>
+        body {
+            padding-top: 56px;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #FFFFFF;
+        }
+
+        body, html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        nav {
+            background-color: #333;
+            text-align: center;
+            font-size: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+    </style>
+
+    <nav>
+        <a href="{{ path('accueil') }}">Accueil</a>
+        <a href="{{ path('videos') }}">Liste vidéos</a>
+        <a href="{{ path('chaine') }}">Chaines</a>
+        <a href="{{ path('recherche') }}">Recherche</a>
+    </nav>
+
+
+    <h1>Liste des Vidéos</h1>
+    <ul class="video-list">
+        {% for video in videos %}
+            <li class="video-list-item">
+                <a href="{{ path('video_show', {'id': video.id}) }}">
+                    <h3>{{ video.titre }}</h3>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

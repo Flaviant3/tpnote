@@ -1,0 +1,17 @@
+{# templates/video/show.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ video.titre }}{% endblock %}
+
+{% block body %}
+    <h1>{{ video.titre }}</h1>
+
+    <p>
+        <strong>Image:</strong> {{ video.image }}<br>
+        <strong>Date de Publication:</strong> {{ video.datepublication|date('Y-m-d H:i:s') }}<br>
+        <strong>Chaine:</strong> {{ video.chaine }}
+    </p>
+
+    <a href="{{ path('videos') }}">Retour à la liste des vidéos</a>
+{% endblock %}

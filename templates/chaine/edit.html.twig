@@ -1,0 +1,14 @@
+{# templates/chaine/edit.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Éditer une Chaîne{% endblock %}
+
+{% block body %}
+    <h1>Éditer une Chaîne</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit">Enregistrer</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('chaine') }}">Retour à la liste des chaines</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+videos:
+    path: /videos
+    controller: App\Controller\VideoController::index
+    methods: ['GET']
+
+recherche:
+    path: /recherche
+    controller: App\Controller\RechercheController::index
+    methods: ['GET']
+
+accueil:
+    path: /
+    controller: App\Controller\AccueilController::index
+    methods: ['GET']
